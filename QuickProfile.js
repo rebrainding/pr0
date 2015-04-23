@@ -16,12 +16,12 @@
 var cacheName = 'profileCache';
 var previousProfile = null;
 
-$(function() {
+$(document).ready(function() {
     // Build cache
     createProfileCache();
     
     // CSS code
-    var css = '.wide-button { width: 100%; padding-top: 5px; padding-bottom: 5px; margin-top: 5px; margin-bottom: 5px; } \
+    var css = '.wide-button { width: 100%; padding-top: 5px; padding-bottom: 5px; padding-left: 20px; padding-right: 20px; margin-top: 5px; margin-bottom: 5px; } \
 .user.profile { display: inline; } \
 .user.profile > .name { cursor: pointer; } \
 .user.profile > .extended { z-index: 9000; display: none; position: absolute; margin-top: 5px; min-width: 200px; padding: 5px; padding-top: 10px; background-color: rgba(0, 0, 0, 0.8); border: 1px solid rgb(42, 46, 49); border-radius: 2px; } \
@@ -38,7 +38,8 @@ $(function() {
     // Build item template hack
     var templateReplace = /(<a href="#user\/{item.user}" class="user um{item.mark}">{item.user}<\/a>)/;
     var templateExtension = '<div class="user profile um{item.mark}" data-showable="0" data-visible="0"><span class="name">{item.user}</span>\
-<div class="extended" data-user="{item.user}"><span><a href="#user\/{item.user}" class="confirm-button wide-button">zum ausf&uuml;hrlichen Profil</a></span></div></div>';
+<div class="extended" data-user="{item.user}"><div class="data-row"><span class="left"><a href="#user\/{item.user}" class="confirm-button wide-button">zum Profil</a></span>\
+<span class="right"><a href="#user\/{item.user}/uploads" class="confirm-button wide-button">alle Uploads</a></span></div></div></div>';
     
     // Template hack for items
     var templateOld = p.View.Stream.Item.prototype.template;
@@ -55,7 +56,8 @@ $(function() {
     // Build comment template hack
     var templateReplace = /<a href="#user\/{c.name}" class="user um{c.mark}">{c.name}<\/a>/;
     var templateExtension = '<div class="user profile um{c.mark}" data-showable="0" data-visible="0"><span class="name">{c.name}</span>\
-<div class="extended" data-user="{c.name}"><span><a href="#user\/{c.name}" class="confirm-button wide-button">zum ausf&uuml;hrlichen Profil</a></div></div>';
+<div class="extended" data-user="{c.name}"><div class="data-row"><span class="left"><a href="#user\/{c.name}" class="confirm-button wide-button">zum Profil</a></span>\
+<span class="right"><a href="#user\/{c.name}/uploads" class="confirm-button wide-button">alle Uploads</a></span></div></div></div>';
     
     // Template hack for comments
     templateOld = p.View.Stream.Comments.prototype.template;
@@ -124,7 +126,7 @@ function loadProfileFromCache(user, target) {
     // Try to load from cache
     var cache = $('body > div#' + cacheName + ' > div[data-type="cache"][data-user="' + user + '"]');
     if (cache.length > 0) {
-        target.children('div.extended').children('span').before(cache.html());
+        target.children('div.extended').children('div:first-child').before(cache.html());
     }
     
     // If we could not load it from cache: we just show a link to full profile 
