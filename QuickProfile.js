@@ -21,7 +21,7 @@ $(document).ready(function() {
     createProfileCache();
     
     // CSS code
-    var css = '.wide-button { width: 100%; padding-top: 5px; padding-bottom: 5px; padding-left: 20px; padding-right: 20px; margin-top: 5px; margin-bottom: 5px; } \
+    var css = '.wide-button { padding-top: 5px; padding-bottom: 5px; padding-left: 20px; padding-right: 20px; margin-top: 5px; margin-bottom: 5px; } \
 .user.profile { display: inline; } \
 .user.profile > .name { cursor: pointer; } \
 .user.profile > .extended { z-index: 9000; display: none; position: absolute; margin-top: 5px; min-width: 200px; padding: 5px; padding-top: 10px; background-color: rgba(0, 0, 0, 0.8); border: 1px solid rgb(42, 46, 49); border-radius: 2px; } \
