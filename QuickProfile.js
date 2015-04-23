@@ -9,7 +9,6 @@
 // @grant	none
 // @include	*pr0gramm.com*
 // @icon	http://pr0gramm.com/media/pr0gramm-favicon.png
-// @run-at	document-start
 // @updateURL	https://raw.githubusercontent.com/rebrainding/pr0/master/QuickProfile.js
 // @downloadURL	https://raw.githubusercontent.com/rebrainding/pr0/master/QuickProfile.js
 // ==/UserScript==
