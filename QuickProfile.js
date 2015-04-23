@@ -1,15 +1,15 @@
 // ==UserScript==
 
 // @name	[Pr0] Visitenkarte
-// @autho	rebrain
-// @namespac	rebrain
-// @copyrigh	2015
-// @descriptio	Erzeugt eine Visitenkarte bei der Anzeige von Benutzernamen
-// @versio	1.0.0
-// @gran	none
-// @includ	*pr0gramm.com*
+// @author	rebrain
+// @namespace	rebrain
+// @copyright	2015
+// @description	Erzeugt eine Visitenkarte bei der Anzeige von Benutzernamen
+// @version	1.0.0
+// @grant	none
+// @include	*pr0gramm.com*
 // @icon	http://pr0gramm.com/media/pr0gramm-favicon.png
-// @run-a	document-start
+// @run-at	document-start
 // @updateURL	https://raw.githubusercontent.com/rebrainding/pr0/master/QuickProfile.js
 // @downloadURL	https://raw.githubusercontent.com/rebrainding/pr0/master/QuickProfile.js
 // ==/UserScript==
