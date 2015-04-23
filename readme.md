@@ -17,9 +17,9 @@ angezeigt, wie lange diese vorausichtlich noch gesperrt sind.
 
 Damit ihr überhaupt Userskripte verwenden könnt, benötigst du folgendes für deinen Browser:
 
-Für FireFox: [Greasemonkey](https://addons.mozilla.org/de/firefox/addon/greasemonkey/)
-Für Chrome: [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=de)
-Für alle anderen Browser (u.a. Internet-Explorer): Einen richtigen Browser ¯\_(ツ)_/¯
+* Für FireFox: [Greasemonkey](https://addons.mozilla.org/de/firefox/addon/greasemonkey/) 
+* Für Chrome: [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=de) 
+* Für alle anderen Browser (u.a. Internet-Explorer): Einen richtigen Browser ¯\_(ツ)_/¯ 
 
 ###Schritt 2
 
