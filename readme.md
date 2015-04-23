@@ -10,8 +10,9 @@ angezeigt, wie lange diese vorausichtlich noch gesperrt sind.
 
 ## Bilder
 
-##Installation
+![Neue Visitenkarte](https://cloud.githubusercontent.com/assets/12076656/7306253/2584dc36-ea04-11e4-9966-7cd45c73ecc7.png)
 
+##Installation
 ###Schritt 1
 
 Damit ihr überhaupt Userskripte verwenden könnt, benötigst du folgendes für deinen Browser:
