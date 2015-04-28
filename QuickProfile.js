@@ -4,7 +4,7 @@
 // @namespace	rebrain
 // @copyright	2015
 // @description	Erzeugt eine Visitenkarte bei der Anzeige von Benutzernamen
-// @version	1.0.0
+// @version	1.1.0
 // @grant	none
 // @include	*pr0gramm.com*
 // @icon	http://pr0gramm.com/media/pr0gramm-favicon.png
