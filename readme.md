@@ -36,12 +36,10 @@ Updates installiert das Skript von alleine. Verbesserungen oder Vorschläge sind
 
 ##Bekannte Fehler
 
-* Zwischen den Kommentaren und der nächsten Bilderreihe ist ein etwas größerer Abstand (um genau zu sein exakt 95px),
+* Zwischen den Kommentaren und der nächsten Bilderreihe ist ein etwas größerer Abstand (um genau zu sein exakt 105px),
 leider ist mir keine Möglichkeit bekannt, das sich die Visitenkarte über die nächste Bilderreihe legt, daher musste
 ich etwas Platz schaffen, um die Visitenkarte dennoch fast komplett anzuzeigen. Falls jemanden eine Lösung für das Problem
 bekannt ist, immer her damit!
-* Manche Badges werden nicht aufgelistet: Es werden nur Badges aufgelistet, welche die API dem Skript liefert
-und diese liefert eben nicht alle die im Profil stehen (API der hurensohn)
 
 ##Danke an
 
