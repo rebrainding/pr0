@@ -1,6 +1,6 @@
 #Changelog
 
-##Version 1.1.0 (aktuell
+##Version 1.1.0 (aktuell)
 * Veröffentlich am 28. April 2015
 * Aktueller Rang/Punkt wird in der Visitenkarte nun dargestellt
 * Es werden alle Badges angezeigt (vorher fehlten die Kommentar-, sowie die Jahresbadge)
