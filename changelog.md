@@ -1,6 +1,7 @@
 #Changelog
 
-##Version 1.1.0 (aktuell; veröffentlich am 28. April 2015)
+##Version 1.1.0 (aktuell
+* Veröffentlich am 28. April 2015
 * Aktueller Rang/Punkt wird in der Visitenkarte nun dargestellt
 * Es werden alle Badges angezeigt (vorher fehlten die Kommentar-, sowie die Jahresbadge)
 * Alle Badges verweisen auf die richtige Seite
@@ -9,5 +10,6 @@
 * Der Abstand zum nächsten Upload wurde von 95 Pixeln auf 105 Pixeln vergrößert (siehe readme.md)
 
 
-##Version 1.0.0 (veröffentlich am 25. April 2015)
+##Version 1.0.0
+* Veröffentlich am 25. April 2015
 * Release
