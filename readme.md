@@ -8,7 +8,7 @@ du erhälst direkt die wichtigsten Daten auf einen Blick (Benislänge, seit wann
 welche dich zum Profil leiten und zu allen weiteren Uploads des jeweiligen Nutzers. Zudem wird bei gesperrten Benutzer
 angezeigt, wie lange diese vorausichtlich noch gesperrt sind.
 
-## Bilder
+##Bilder
 
 ![Neue Visitenkarte](https://cloud.githubusercontent.com/assets/12076656/7306253/2584dc36-ea04-11e4-9966-7cd45c73ecc7.png)
 
