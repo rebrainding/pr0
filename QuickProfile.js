@@ -1,5 +1,4 @@
 // ==UserScript==
-
 // @name	[Pr0] Visitenkarte
 // @author	rebrain
 // @namespace	rebrain
