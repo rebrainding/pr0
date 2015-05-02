@@ -1,6 +1,11 @@
 #Changelog
 
-##Version 1.2.0 (aktuell)
+##Version 1.2.1 (aktuell)
+* Veröffentlicht am 02. Mai 2015
+* Entfernung einer Debug-Ausgabe in der Browserkonsole (console.log)
+* Optimierung der Erfassung des aktuellen Pr0mium-Status für die "stelz"-Funktion
+
+##Version 1.2.0
 * Veröffentlicht am 02. Mai 2015
 * Die Visitenkarte wird nun schon angezeigt, sobald sich die Maus über dem Namen befindet (Hovereffekt)
 * Es wurde ein Stelz-Button hinzugefügt (nutzbar für alle Pr0mium Benutzer)
