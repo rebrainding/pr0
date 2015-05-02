@@ -2,8 +2,9 @@
 
 ##Version 1.2.1 (aktuell)
 * Veröffentlicht am 02. Mai 2015
-* Entfernung einer Debug-Ausgabe in der Browserkonsole (console.log)
+* Entfernung von Debug-Ausgaben in der Browserkonsole (console.log)
 * Optimierung der Erfassung des aktuellen Pr0mium-Status für die "stelz"-Funktion
+* Weitere Optimierungen beim Stelzen
 
 ##Version 1.2.0
 * Veröffentlicht am 02. Mai 2015
