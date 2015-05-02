@@ -4,9 +4,8 @@ entworfen von rebrain
 ##Das bewirkt das Skript
 
 Beim Klick auf einen Benutzernamen (außer der oben rechts) wirst du nicht mehr auf das Profil des Benutzers geleitet, sondern
-du erhälst direkt die wichtigsten Daten auf einen Blick (Benislänge, seit wann dabei und Badges), dazu erhälst du 2 Buttons,
-welche dich zum Profil leiten und zu allen weiteren Uploads des jeweiligen Nutzers. Zudem wird bei gesperrten Benutzer
-angezeigt, wie lange diese vorausichtlich noch gesperrt sind.
+du erhälst direkt die wichtigsten Daten auf einen Blick (Rang, Benislänge, seit wann dabei und Badges), dazu erhälst du 3 Buttons, welche dich zum Profil leiten und zu allen weiteren Uploads des jeweiligen Nutzers. Außerdem kannst du den Benutzer
+direkt stelzen. Zudem wird bei gesperrten Benutzer angezeigt, wie lange diese vorausichtlich noch gesperrt sind.
 
 ##Bilder
 
@@ -46,4 +45,4 @@ bekannt ist, immer her damit!
 * [Schwuchtelini](http://pr0gramm.com/user/Schwuchtelini)
 * [vikenzor](http://pr0gramm.com/user/vikenzor)
 
-Eure Skripte haben mir geholfen mich in diese toll dokumentierte API einzuarbeiten ...
+Eure Skripte haben mir geholfen mich in diese API einzuarbeiten ...
