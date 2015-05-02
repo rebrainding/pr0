@@ -4,7 +4,7 @@
 // @namespace	rebrain
 // @copyright	2015
 // @description	Erzeugt eine Visitenkarte bei der Anzeige von Benutzernamen
-// @version	1.2.0
+// @version	1.2.1
 // @grant	none
 // @include	*pr0gramm.com*
 // @icon	http://pr0gramm.com/media/pr0gramm-favicon.png
@@ -39,11 +39,8 @@ var user = undefined;
 // Modify template before rendering
 modifyTemplates();
 
-// Do css stuff
+// Do general stuff
 $(document).ready(function() {
-    // Start user data loading
-    getOwnUserData();
-    
     // Build cache
     createProfileCache();
     
@@ -78,16 +75,8 @@ $(document).ready(function() {
     
 });
 
-function getOwnUserData() {
-    // Get user info
-    p.api.get('user.info', {}, function(response) {
-        user = response.account;
-        console.log(hasPr0mium());
-    }, p.ServerAPI.SILENT);
-}
-
 function hasPr0mium() {
-    return (user != undefined && (user.paidUntil * 1000) > (Date.now()));
+    return p.user.paid;
 }
 
 function modifyTemplates() {
@@ -160,13 +149,15 @@ function followUser(button) {
     var action = (state ? 'un' : '') + 'follow';
     var user = button.attr('data-user');
     
-    // Now talk to api
+    // Now talk to api ...
     p.api.post('profile.' + action, {
         name: user
-    }, (displayError ? function() { console.log('Fehler beim stelzen'); } : p.ServerAPI.SILENT));
+    }, function(response) {
+        // ... then display change
+        changeFollowState(user, !state);
+    }, (displayError ? function() { console.log('Fehler beim Stelzen'); } : p.ServerAPI.SILENT));
     
-    // Then display change and return
-    changeFollowState(user, !state);
+    // Return
     return true;
 }
 
@@ -305,7 +296,7 @@ function loadProfileFromAPI(user, node) {
         name: user
     }, function(response) {
         handleLoadedData(response, node);
-    }, (displayError ? function() { console.log('Fehler beim stelzen'); } : p.ServerAPI.SILENT));
+    }, (displayError ? function() { console.log('Fehler beim Profil laden'); } : p.ServerAPI.SILENT));
 }
 
 function handleUserHoverProfile(element, action, force) {
