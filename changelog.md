@@ -5,7 +5,7 @@
 * Optische Überarbeitung der Visitenkarte (-> Visitenkarte wird nun auch korrekt in der Stelzliste angezeigt)
 * Schematische Auszeichung der Visitenkarte wurde verbessert
 
-##Version 1.2.1 (aktuell)
+##Version 1.2.1
 * Veröffentlicht am 02. Mai 2015
 * Entfernung von Debug-Ausgaben in der Browserkonsole (console.log)
 * Optimierung der Erfassung des aktuellen Pr0mium-Status für die "stelz"-Funktion
