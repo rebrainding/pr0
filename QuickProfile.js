@@ -4,7 +4,7 @@
 // @namespace	rebrain
 // @copyright	2015
 // @description	Erzeugt eine Visitenkarte bei der Anzeige von Benutzernamen
-// @version	1.2.1
+// @version	1.2.2
 // @grant	none
 // @include	*pr0gramm.com*
 // @icon	http://pr0gramm.com/media/pr0gramm-favicon.png
@@ -45,22 +45,27 @@ $(document).ready(function() {
     createProfileCache();
     
     // CSS code
-    var css = '.profile-button { margin-left: 5px; margin-right: 5px; padding-top: 5px; padding-bottom: 5px; padding-left: 20px; padding-right: 20px; margin-top: 5px; margin-bottom: 5px; } \
-.profile-button[data-action="follow"][data-follow-state="1"] { background-color: #555555; } \
-.profile-button[data-action="follow"][data-follow-state="1"]:hover { background-color: #F5F7F6; } \
+    var css = '\
 .user.profile { display: inline; } \
 .user.profile > .name { cursor: pointer; } \
 .user.profile > .name.active { text-decoration: underline; } \
-.user.profile > .extended { z-index: 9000; display: none; font-size: 12px; position: absolute; margin-top: 5px; min-width: 250px; padding: 5px; padding-top: 10px; background-color: rgba(0, 0, 0, 0.8); /*border: 1px solid rgb(42, 46, 49);*/ } \
-.user.profile > .extended > .data-row { display: inline; font-family: sans-serif; text-align: center; } \
-.user.profile > .extended > .data-row:after { clear: both; display: block; content: " "; padding-bottom: 3px; } \
-.user.profile > .extended > .data-row > .full { text-align: center; } \
-.user.profile > .extended > .data-row > .left { padding-right: 10px; color: #BBBBBB; float: left; } \
-.user.profile > .extended > .data-row > .right { padding-left: 10px; float: right; } \
-.user.profile > .extended > .data-row > .right.exceptional { color: #F5F7F6; } \
-.user.profile > .extended > .data-row > .right.default { color: #EE4D2E; } \
+.user.profile > .extended { z-index: 9000; display: none; font-size: 12px; position: absolute; margin-top: 5px; padding: 8px; background-color: rgba(0, 0, 0, 0.8); } \
+.user.profile > .extended > ul { list-style: none; padding: 0px; margin: 0px; } \
+.user.profile > .extended > ul > li { display: inline; white-space: nowrap; } \
+.user.profile > .extended > ul > li > span { } \
+.user.profile > .extended > ul > li > span:after { clear: both; display: block; content: " "; padding-bottom: 4px;} \
+.user.profile > .extended > ul > li > span > span { } \
+.user.profile > .extended > ul > li > span > span:first-child { float: left; margin-right: 10px; color: #BBBBBB; } \
+.user.profile > .extended > ul > li > span > span:last-child { float: right; margin-left: 10px; color: #EE4D2E; } \
+.user.profile > .extended > ul > li > span > a { margin-top: 7px; margin-left: 3px; margin-right: 3px; padding-left: 17px; padding-right: 17px; } \
+.user.profile > .extended > ul > li > span > a[data-action="follow"][data-follow-state="1"] { background-color: #555555; } \
+.user.profile > .extended > ul > li > span > a[data-action="follow"][data-follow-state="1"]:hover { background-color: #F5F7F6; } \
+.user.profile > .extended > ul > li > span > a:first-child { margin-left: 0px; } \
+.user.profile > .extended > ul > li > span > a:last-child { margin-right: 0px; } \
+.user.profile > .extended > ul > li > ul { list-style: none; padding: 0px; margin: 0px; margin-top: 3px; text-align: right; } \
+.user.profile > .extended > ul > li > ul > li { display: inline; } \
 .comments > .comment-box:last-child { margin-bottom: 105px; } \
-';
+'; // #EE4D2E + #F5F7F6
     
     // Now bind action to item and comment
     $(document).on('click', 'div.user.profile[data-showable][data-visible] > span.name', function() { p.navigateTo('user/' + this.innerHTML, p.NAVIGATE.DEFAULT); });
@@ -68,11 +73,10 @@ $(document).ready(function() {
     $(document).on('mouseout', 'div.user.profile[data-showable][data-visible]', function() { handleUserHoverProfile(this, 'close') });
     
     // Then bind follow action
-    $(document).on('click', 'a.confirm-button.profile-button[data-action="follow"]', function() { followUser(this); });
+    $(document).on('click', 'a.confirm-button[data-action="follow"]', function() { followUser(this); });
     
     // CSS stuff
     $('head').append('<style type="text/css">' + css + '</style>');
-    
 });
 
 function hasPr0mium() {
@@ -108,11 +112,18 @@ function buildProfileRegex(name, mark) {
 
 function buildProfileTemplate(name, mark) {
     return '<div class="user profile um{' + mark + '}" data-showable="0" data-visible="0"><span class="name">{' + name + '}</span>\
-<div class="extended" data-user="{' + name + '}"><div class="data-row"><span class="full">\
-<a href="#user/{' + name + '}" class="confirm-button profile-button"><span class="pict"></span>Profil</a>\
-<a href="#user/{' + name + '}/uploads" class="confirm-button profile-button"><span class="pict"></span>Uploads</a>\
-<a class="confirm-button profile-button" data-user="{' + name + '}" data-action="follow" data-follow-state="0"><span class="pict">@</span> <span class="description">stelz</span></a>\
-</span></div></div></div>';
+<div class="extended" data-user="{' + name + '}">\
+  <ul>\
+    <li style="text-align: center">\
+      <span>\
+        <a href="#user/{' + name + '}" class="confirm-button"><span class="pict"></span>Profil</a>\
+        <a href="#user/{' + name + '}/uploads" class="confirm-button"><span class="pict"></span>Uploads</a>\
+        <a class="confirm-button" data-user="{' + name + '}" data-action="follow" data-follow-state="0"><span class="pict">@</span> <span class="description">stelz</span></a>\
+      </span>\
+    </li>\
+  </ul>\
+</div>\
+</div>';
 }
 
 function createProfileCache() {
@@ -167,15 +178,18 @@ function addProfileInCache(user, data, badges) {
     
     // Handle data
     for (var i = 0; i < data.length; i++) {
-        content = content + createCacheLine(data[i].name, data[i].value, 'default');
+        content = content + createCacheLine(data[i].name, data[i].value);
     }
     
     // Handle badges
-    var renderedBadges = '';
-    for (var i = 0; i < badges.length; i++) {
-        renderedBadges = renderedBadges + ' <a class="badge" href="http://' + CONFIG.HOST + '/' + badges[i].link.substr(1) + '" title="' + badges[i].description + '"><img src="/media/badges/' + badges[i].image + '" class="badge" alt="" />' + (badges[i].extra != undefined ? '<span class="badge-extra' + (badges[i].css != undefined ? ' badge-' + badges[i].css : '') + '">' + badges[i].extra + '</span>' : '') + '</a>';
+    if (badges.length) {
+        var renderedBadges = '';
+        for (var i = 0; i < badges.length; i++) {
+            renderedBadges = renderedBadges + '<li><a class="badge" href="http://' + CONFIG.HOST + '/' + badges[i].link.substr(1) + '" title="' + badges[i].description + '"><img src="/media/badges/' + badges[i].image + '" class="badge" alt="" />' + (badges[i].extra != undefined ? '<span class="badge-extra' + (badges[i].css != undefined ? ' badge-' + badges[i].css : '') + '">' + badges[i].extra + '</span>' : '') + '</a></li>';
+        }
+        
+        content = content + createCacheList(renderedBadges);
     }
-    content = content + createCacheLine('', renderedBadges, 'default');
     
     // Finish final line
     content = content + '</div>';
@@ -184,15 +198,19 @@ function addProfileInCache(user, data, badges) {
     $('body > div#' + cacheName).append(content);
 }
 
-function createCacheLine(left, right, color) {
-    return '<div class="data-row"><span class="left">' + left + '</span><span class="right ' + color + '">' + right + '</span></div>';
+function createCacheList(content) {
+    return '<li><ul>' + content + '</ul></li>';
+}
+
+function createCacheLine(left, right) {
+    return '<li><span><span>' + left + '</span> <span>' + right + '</span></span></li>';
 }
 
 function loadProfileFromCache(user, target) {
     // Try to load from cache
     var cache = $('body > div#' + cacheName + ' > div[data-type="cache"][data-user="' + user + '"]');
     if (cache.length > 0) {
-        target.children('div.extended').children('div:first-child').before(cache.html());
+        target.children('div.extended').children('ul').children('li:first-child').before(cache.html());
         target.attr('data-showable', '1');
     }
 }
@@ -270,7 +288,7 @@ function handleLoadedData(data, node) {
     
     // Remove loading animation
     node.children('div.extended').children('div.loader').remove();
-    node.children('div.extended').children('div:first-child').css('display', '');
+    node.children('div.extended').children('ul').css('display', '');
     
     // Provide to cache and then use
     addProfileInCache(user.name, profile, data.badges);
@@ -287,7 +305,7 @@ function loadProfileFromAPI(user, node) {
     node.attr('data-request-done', '1');
     
     // Add loading animation
-    node.children('div.extended').children('div:first-child').css('display', 'none');
+    node.children('div.extended').children('ul').css('display', 'none');
     node.children('div.extended').append(p.View.Base.LoadingAnimHTML);
     node.children('div.extended').children('div.loader').css('margin-top', '32px');
     
